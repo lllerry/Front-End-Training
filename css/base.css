@@ -19,7 +19,7 @@ ul, ol {
 input {
     padding-top: 0;
     padding-bottom: 0;
-    font-family: "SimSun", "宋体";
+    font-family: "SimSun", "宋体", serif;
 }
 
 select, input {
@@ -207,16 +207,43 @@ s, i, em {
 /*site search-logo part start*/
 .search-logo {
     width: 362px;
-    height: 100px;
-    background-color: red;
+    height: 60px;
+    padding: 20px 0;
     float: left;
 }
 
+.search-logo a {
+    display: inline-block;
+    width: 270px;
+    height: 60px;
+    background: url("../images/logo.png") no-repeat;
+}
+
 .search-input {
-    width: 538px;
-    height: 61px;
-    background-color: blue;
+    height: 36px;
+    padding-top: 25px;
     float: left;
+}
+
+.search-input input {
+    padding: 4px;
+    width: 446px;
+    height: 24px;
+    font-family: Microsoft YaHei, tahoma, arial, Hiragino Sans GB, \\5b8b\4f53, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    border: 2px solid #b61d1d;
+    border-right: none;
+    color: #999999;
+}
+
+.search-input button {
+    background-color: #b61d1d;
+    color: white;
+    width: 82px;
+    height: 36px;
+    font: 400 16px "Microsoft YaHei";
+    cursor: pointer;
 }
 
 .search-car {
