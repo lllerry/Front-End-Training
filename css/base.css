@@ -203,3 +203,37 @@ s, i, em {
 }
 
 /*site top-banner part end*/
+
+/*site search-logo part start*/
+.search-logo {
+    width: 362px;
+    height: 100px;
+    background-color: red;
+    float: left;
+}
+
+.search-input {
+    width: 538px;
+    height: 61px;
+    background-color: blue;
+    float: left;
+}
+
+.search-car {
+    width: 139px;
+    height: 34px;
+    border: 1px solid #dfdfdf;
+    background-color: #f9f9f9;
+    margin-top: 25px;
+    margin-right: 65px;
+    float: right;
+}
+
+.search-moreAlink {
+    width: 538px;
+    height: 28px;
+    background-color: purple;
+    float: left;
+}
+
+/*site search-logo part end*/
