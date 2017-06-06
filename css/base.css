@@ -165,4 +165,17 @@ s, i, em {
     padding: 0 !important;
 }
 
+.site-nav-r .jd-tel {
+    padding-left: 25px;
+}
+
+.jd-tel span {
+    position: absolute;
+    width: 15px;
+    height: 20px;
+    top: 5px;
+    left: 6px;
+    background: url("../images/tel.png") no-repeat;
+}
+
 /*site nav part end*/
