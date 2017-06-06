@@ -119,3 +119,37 @@ s, i, em {
 .hide {
     display: none
 }
+
+/*site nav part start*/
+.site-nav {
+    background-color: #f1f1f1;
+    height: 30px;
+    line-height: 30px;
+}
+
+.site-nav-send {
+    position: relative;
+    height: 30px;
+    padding: 0 25px 0 10px;
+}
+
+.site-nav-send:hover {
+    background-color: white;
+}
+
+.site-nav-send i {
+    overflow: hidden;
+    position: absolute;
+    height: 7px;
+    width: 8px;
+    top: 12px;
+    right: 10px;
+    font: normal 13px/15px "consolas";
+}
+
+.site-nav-send s {
+    position: absolute;
+    bottom: 0;
+}
+
+/*site nav part end*/
