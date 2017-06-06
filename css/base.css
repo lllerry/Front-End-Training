@@ -179,3 +179,27 @@ s, i, em {
 }
 
 /*site nav part end*/
+
+/*site top-banner part start*/
+.top-banner {
+    background-color: #37C2FB;
+}
+
+.tb {
+    position: relative;
+}
+
+.close-banner {
+    position: absolute;
+    top: 5px;
+    width: 19px;
+    height: 19px;
+    right: 5px;
+    background: url("../images/close-banner.png") no-repeat;
+}
+
+.close-banner:hover {
+    background-position: bottom;
+}
+
+/*site top-banner part end*/
