@@ -420,6 +420,35 @@ s, i, em {
     border-bottom: 1px solid #B1191A;
 }
 
+.shortcut-nav-menu-one div {
+    padding: 0 10px;
+    width: 189px;
+    height: 31px;
+    font: 400 14px/31px "微软雅黑";
+    color: white;
+}
+
+.shortcut-nav-menu-one h3 {
+    float: left;
+}
+
+.shortcut-nav-menu-one a {
+    color: white;
+}
+
+.shortcut-nav-menu-one div:hover {
+    background-color: white;
+}
+
+.shortcut-nav-menu-one div:hover a {
+    color: #C81623;
+}
+
+.shortcut-nav-menu-one i {
+    font: 400 9px/31px consolas;
+    float: right;
+}
+
 .shortcut-nav .shortcut-nav-items {
     width: 730px;
     height: 44px;
