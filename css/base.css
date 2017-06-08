@@ -365,4 +365,24 @@ s, i, em {
     padding-top: 8px;
 }
 
+.footer-bottom {
+    padding: 20px 0 30px;
+    margin-top: 20px;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+}
+
+.footer-bottom-links a {
+    margin: 0 10px;
+}
+
+.footer-bottom-copyright {
+    padding: 10px 0;
+    line-height: 20px;
+}
+
+.footer-bottom-img a {
+    margin: 0 5px;
+}
+
 /*site footer part end*/
