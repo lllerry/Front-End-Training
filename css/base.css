@@ -386,3 +386,49 @@ s, i, em {
 }
 
 /*site footer part end*/
+
+/*site shortcut part start*/
+.shortcut-nav {
+    height: 44px;
+    width: 100%;
+    border-bottom: 2px solid #b1191a;
+}
+
+.shortcut-nav-menu {
+    width: 210px;
+    height: 44px;
+    background-color: pink;
+}
+
+.shortcut-nav-menu-all a {
+    display: inline-block;
+    width: 190px;
+    background-color: #B1191A;
+    height: 44px;
+    font: 400 15px/44px "microsoft yahei";
+    color: #ffffff;
+    padding: 0 10px;
+}
+
+.shortcut-nav-menu-one {
+    margin-top: 2px;
+    height: 465px;
+    background-color: #C81623;
+    border-left: 1px solid #B1191A;
+    border-bottom: 1px solid #B1191A;
+}
+
+.shortcut-nav .shortcut-nav-items {
+    width: 730px;
+    height: 44px;
+    background-color: blue;
+}
+
+.shortcut-nav .shortcut-nav-img {
+    margin-top: -10px;
+    width: 200px;
+    background-color: yellow;
+    margin-right: 50px;
+}
+
+/*site shortcut part end*/
