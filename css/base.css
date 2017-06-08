@@ -395,6 +395,8 @@ s, i, em {
 }
 
 .shortcut-nav-menu {
+    position: relative;
+    z-index: 1;
     width: 210px;
     height: 44px;
     background-color: pink;
@@ -421,7 +423,22 @@ s, i, em {
 .shortcut-nav .shortcut-nav-items {
     width: 730px;
     height: 44px;
-    background-color: blue;
+}
+
+.shortcut-nav-items li {
+    float: left;
+}
+
+.shortcut-nav-items li a {
+    height: 44px;
+    display: inline-block;
+    padding: 0 20px;
+    color: #333;
+    font: 400 16px/44px "微软雅黑";
+}
+
+.shortcut-nav-items li a:hover {
+    color: #C81623;
 }
 
 .shortcut-nav .shortcut-nav-img {
