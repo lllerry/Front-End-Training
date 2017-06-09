@@ -1,4 +1,21 @@
+/*site sub-ad part start*/
+.sub-ad {
+    position: relative;
+}
+
+.sub-ad a {
+    position: absolute;
+    width: 100%;
+    height: 644px;
+    background: url(../images/subbanner.jpg) no-repeat center top;
+}
+
+/*site sub-ad part end*/
 /*site main part start*/
+.main {
+    position: relative;
+}
+
 .main-slider {
     margin: 12px 0 0 220px;
     width: 730px;
@@ -136,6 +153,11 @@
 /*site main part end*/
 
 /*site today part start*/
+.today {
+    margin-top: 12px;
+    position: relative;
+}
+
 .today-left {
     float: left;
 }
