@@ -305,7 +305,7 @@ s, i, em {
 
 /*site search-logo part end*/
 /*site footer part start*/
-.footer {
+.footer, .today {
     margin-top: 12px;
 }
 

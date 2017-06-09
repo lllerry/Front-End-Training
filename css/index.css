@@ -30,8 +30,8 @@
     background-color: #B1191A;
 }
 
-.main-slider .arrow {
-    width: 730px;
+.arrow {
+    width: 100%;
     top: 50%;
     margin-top: -31px;
     left: 0;
@@ -134,3 +134,33 @@
 }
 
 /*site main part end*/
+
+/*site today part start*/
+.today-left {
+    float: left;
+}
+
+.today-left a {
+    width: 210px;
+    height: 151px;
+    display: inline-block;
+    background: url(../images/pic1.jpg) no-repeat;
+}
+
+.today-right {
+    position: relative;
+    overflow: hidden;
+    width: 1000px;
+    float: right;
+}
+
+.today-right ul {
+    width: 410%;
+}
+
+.today-right li {
+    margin-right: 1px;
+    float: left;
+}
+
+/*site today part end*/
