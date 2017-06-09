@@ -175,7 +175,7 @@ s, i, em {
     height: 20px;
     top: 5px;
     left: 6px;
-    background: url("../JD/images/tel.png") no-repeat;
+    background: url("../images/tel.png") no-repeat;
 }
 
 /*site nav part end*/
@@ -195,7 +195,7 @@ s, i, em {
     width: 19px;
     height: 19px;
     right: 5px;
-    background: url("../JD/images/close-banner.png") no-repeat;
+    background: url("../images/close-banner.png") no-repeat;
 }
 
 .close-banner:hover {
@@ -216,7 +216,7 @@ s, i, em {
     display: inline-block;
     width: 270px;
     height: 60px;
-    background: url("../JD/images/logo.png") no-repeat;
+    background: url("../images/logo.png") no-repeat;
 }
 
 .search-input {
@@ -264,7 +264,7 @@ s, i, em {
     left: 18px;
     width: 18px;
     height: 16px;
-    background: url("../JD/images/tel.png") no-repeat 0 -58px;
+    background: url("../images/tel.png") no-repeat 0 -58px;
     position: absolute;
 }
 
@@ -358,7 +358,7 @@ s, i, em {
     width: 186px;
     height: 169px;
     float: right;
-    background: url("../JD/images/china.png") no-repeat left bottom;
+    background: url("../images/china.png") no-repeat left bottom;
 }
 
 .coverage a {

@@ -7,7 +7,7 @@
     position: absolute;
     width: 100%;
     height: 644px;
-    background: url(../JD/images/subbanner.jpg) no-repeat center top;
+    background: url(../images/subbanner.jpg) no-repeat center top;
 }
 
 /*site sub-ad part end*/
@@ -143,7 +143,7 @@
     display: inline-block;
     width: 25px;
     height: 25px;
-    background: url(../JD/images/fly.png) no-repeat;
+    background: url(../images/fly.png) no-repeat;
     top: 10px;
     left: 50%;
     margin-left: -12.5px;
@@ -166,7 +166,7 @@
     width: 210px;
     height: 151px;
     display: inline-block;
-    background: url(../JD/images/pic1.jpg) no-repeat;
+    background: url(../images/pic1.jpg) no-repeat;
 }
 
 .today-right {
