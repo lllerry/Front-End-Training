@@ -1,0 +1,15 @@
+/*site main part start*/
+.main-slider {
+    margin: 12px 0 0 220px;
+    width: 730px;
+    height: 454px;
+}
+
+.main-news-top {
+    margin: 12px 0 5px 0;
+    height: 372px;
+    width: 248px;
+    border: 1px solid #e4e4e4;
+}
+
+/*site main part end*/
