@@ -30,6 +30,28 @@
     background-color: #B1191A;
 }
 
+.main-slider .arrow {
+    width: 730px;
+    top: 50%;
+    margin-top: -31px;
+    left: 0;
+    position: absolute;
+}
+
+.arrow a {
+    background: rgba(0, 0, 0, 0.1);
+    font: 400 22px/62px "SimSun";
+    text-align: center;
+    color: white;
+    width: 28px;
+    height: 62px;
+    display: inline-block;
+}
+
+.arrow a:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
 .main-news-top {
     margin: 12px 0 5px 0;
     height: 372px;
