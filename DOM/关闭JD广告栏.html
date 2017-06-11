@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .w {
+            position: relative;
+            height: 100px;
+            width: 1210px;
+            margin: 0 auto;
+            background-color: skyblue;
+        }
+
+        #box {
+            height: 100px;
+            background-color: pink;
+        }
+
+        #closeBanner {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            document.getElementById("closeBanner").onclick = function () {
+                document.getElementById("box").className = "hide";
+            }
+        }
+    </script>
+</head>
+<body>
+<!--dom 是对文档内容进行抽象化的方法-->
+<div id="box">
+    <div class="w">
+        <div id="closeBanner">
+            x
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
