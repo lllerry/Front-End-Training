@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function callJs() {
+            alert("haha");
+        }
+        function callAndroidMethod1() {
+            test.hello("js 调用android方法1");
+        }
+        function callAndroidMethod2() {
+            document.location = "js://webview?arg1=111&arg2=222";
+        }
+        function clickPrompt() {
+            var result = prompt("js://demo?arg1=111&arg2=222");
+            alert(result);
+        }
+    </script>
+</head>
+<body>
+<button onclick="callAndroidMethod1()">点击method1</button>
+<button onclick="callAndroidMethod2()">点击method2</button>
+<button onclick="clickPrompt()">点击method3</button>
+</body>
+</html>
