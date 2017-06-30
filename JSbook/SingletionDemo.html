@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script defer>
+        //单例模式
+        var singletion = function () {
+            var privateVariable = 10;
+
+            function privateMethod() {
+                return false;
+            }
+
+            return {
+                publicProperty: true,
+                publicMethod: function () {
+                    privateVariable++;
+                    return privateMethod();
+                }
+            }
+        }();
+        //        alert(singletion.publicProperty);
+        //        alert(singletion.publicMethod());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

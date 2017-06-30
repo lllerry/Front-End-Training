@@ -13,4 +13,5 @@
 // }
 with (location) {
     search.substring(1)
+//    作用域链
 }

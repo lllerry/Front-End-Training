@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script defer>
+        //        使用函数表达式
+    </script>
+</head>
+<body>
+<script defer>
+    //    function outputNumber(count) {
+    //        for (var i = 0; i < count; i++) {
+    //            alert(i);
+    //        }
+    //        alert(i);
+    //    }
+
+    //    outputNumber(2);
+
+    //匿名函数可以模仿块级作用域 通常称为私有作用域
+    //    function outputNumber(count) {
+    //        (function () {
+    //            for (var i = 0; i < count; i++) {
+    //                alert(i);
+    //            }
+    //        })();
+    //        alert(i);
+    //    }
+//    419119237
+//    120115250
+    function MyObject() {
+        var privateVariable = 10;
+
+        function privateFun() {
+            return false
+        }
+
+        //可以访问私有变量
+        this.publicMethod = function () {
+            privateVariable++;
+            alert(privateVariable);
+            return privateFun();
+        }
+    }
+
+    new MyObject().publicMethod();
+</script>
+</body>
+</html>

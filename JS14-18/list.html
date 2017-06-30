@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 10px solid yellow;
+            background-color: pink;
+        }
+    </style>
+
+</head>
+<body>
+<div class="box">
+
+</div>
+<script defer>
+    //js 三大系列
+    // 三大家族 offset/scroll/client
+    //事件对象、event
+    var div = document.getElementsByTagName("div")[0];
+    //可以检测盒子的宽高 包括padding 包括border 不包括margin
+    console.log(div.offsetHeight)
+</script>
+</body>
+</html>

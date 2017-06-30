@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script defer>
+        //        function createPerson(name, age, job) {
+        //            var o = {};
+        //            o.name = name;
+        //            o.age = age;
+        //            o.job = job;
+        //            o.sayName = function () {
+        //                alert(this.name);
+        //            };
+        //
+        //            return o;
+        //        }
+
+
+        //        function Person(name, age, job) {
+        //            this.name = name;
+        //            this.age = age;
+        //            this.job = job;
+        //        }
+
+        //        function Person(name, age, job) {
+        //            Person.prototype.name = name;
+        //            Person.prototype.age = age;
+        //            Person.prototype.job = job;
+        //        }
+        //
+        //        var p1 = new Person();
+        //        var p2 = new Person('lerry', 23, 'coder');
+        //        alert(p1.name);
+        //        alert(p2.name + "1");
+
+        //        var Person = function () {
+        //        };
+        //
+        //        Person.prototype.name = 'haha';
+        //        Person.prototype.age = 29;
+
+        //获取可枚举的实例属性
+        //        alert(Object.keys(Person.prototype));
+        //获取所有属性，不论它是否枚举
+        //        alert(Object.getOwnPropertyNames(Person));
+
+        //简单的原型语法
+        //        function Person() {
+        //
+        //        }
+        //
+        //        Person.prototype = {
+        //            name: 'lerry'
+        //        };
+        //        alert(Person.prototype.constructor == Object);
+        //        alert(Person.prototype.constructor == Person);
+
+        //        Object.defineProperty(Person.prototype, "constructor", {enumerable: false, value: Person});
+        //        alert(Person.prototype.constructor == Person);
+
+        //组合使用构造函数模式和原型模式
+        //        function Person(name, age, job) {
+        //            this.name = name;
+        //            this.age = age;
+        //            this.job = job;
+        //        }
+        //
+        //        Person.prototype = {
+        //            constructor: Person,
+        //            sayName: function () {
+        //                alert(this.name)
+        //            }
+        //        };
+
+        //        new Person('lerry', 23, 'haha').sayName()
+
+        //借用构造函数，构造继承
+        //        function SuperType() {
+        //            this.color = ['red', 'blue', 'green'];
+        //        }
+
+        //        function SubType() {
+        //            //继承了SuperType
+        //            SuperType.call(this);
+        //        }
+
+        //        var instance1 = new SubType();
+        //        alert(instance1.color);
+
+
+        //传递参数
+        //        function SuperType(name) {
+        //            this.name = name;
+        //        }
+
+        //        function SubType(subname) {
+        //            SuperType.call(this, subname);
+        //            this.age = 29;
+        //        }
+
+        //        var instance = new SubType('lerry');
+        //        alert(instance.name);
+        //        alert(instance.age);
+
+
+        //组合继承  原型链和借用构造函数的技术组合到一块
+        function SuperType(name) {
+            this.name = name;
+            this.color = ['red', 'blue', 'green'];
+        }
+        SuperType.prototype.sayName = function () {
+            alert(this.name);
+        };
+
+        function SubType(name, age) {
+            //继承属性
+            SuperType.call(this, name);
+
+            alert(this instanceof SubType);
+
+            this.age = age;
+        }
+
+        //继承方法
+        SubType.prototype = new SuperType();
+        SubType.prototype.constructor = SubType;
+        SubType.prototype.sayAge = function () {
+            alert(this.age);
+        };
+
+        var instance1 = new SubType('lerry', 23);
+        instance1.color.push('black');
+        alert(instance1.color);
+        instance1.sayName();
+        instance1.sayAge();
+
+        var instance2 = new SubType('bear', 24);
+        alert(instance2.color);
+        instance2.sayName();
+        instance2.sayAge();
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>
