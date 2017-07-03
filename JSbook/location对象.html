@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script defer>
+    function getelement(id) {
+        if (document.getElementById(id)) {
+            return document.getElementById(id);
+        } else if (document.all) {
+            return document.all[id];
+        } else {
+            throw  new Error("no way to retrieve element!");
+        }
+    }
+
+
+</script>
+</body>
+</html>

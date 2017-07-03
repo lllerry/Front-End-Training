@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            width: 500%;
+            position: absolute;
+            left: 0;
+        }
+
+        .box {
+            width: 490px;
+            height: 170px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin: 200px auto;
+        }
+
+        .inner {
+            position: relative;
+            width: 490px;
+            height: 170px;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        .square {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        span {
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            line-height: 16px;
+            border: 1px solid #ccc;
+            text-align: center;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .current {
+            background-color: darkorange;
+            color: white;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var inner = document.getElementById("inner");
+            var ul = inner.children[0];
+            var squareArr = inner.children[1].children;
+
+            //块级作用域
+            for (var i = 0; i < squareArr.length; i++) {
+                squareArr[i].index = i;
+                //绑定事件
+                squareArr[i].onmousemove = function () {
+                    //清除其他事件
+                    for (var j = 0; j < squareArr.length; j++) {
+                        squareArr[j].className = "";
+                    }
+                    this.className = "current";
+                    //移动盒子
+                    animate(ul, -this.index * 490);
+                }
+            }
+
+            function animate(ele, target) {
+                //要用定时器，先清除定时器
+                //一个盒子只能有一个定时器，这样儿的话，不会和其他盒子出现定时器冲突
+                //而定时器本身讲成为盒子的一个属性
+                clearInterval(ele.timer);
+                //我们要求盒子既能向前又能向后，那么我们的步长就得有正有负
+                //目标值如果大于当前值取正，目标值如果小于当前值取负
+                var speed = target > ele.offsetLeft ? 10 : -10;
+                ele.timer = setInterval(function () {
+                    //在执行之前就获取当前值和目标值之差
+                    var val = target - ele.offsetLeft;
+                    ele.style.left = ele.offsetLeft + speed + "px";
+                    //目标值和当前值只差如果小于步长，那么就不能在前进了
+                    //因为步长有正有负，所有转换成绝对值来比较
+                    if (Math.abs(val) < Math.abs(speed)) {
+                        ele.style.left = target + "px";
+                        clearInterval(ele.timer);
+                    }
+                }, 5)
+            }
+        };
+
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="inner" id="inner">
+        <ul>
+            <li><a href="#"><img src="images/01.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/02.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/03.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/04.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/05.jpg" alt=""></a></li>
+        </ul>
+        <div class="square">
+            <span class="current">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
