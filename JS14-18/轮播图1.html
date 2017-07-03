@@ -60,6 +60,8 @@
     <script>
         window.onload = function () {
             var inner = document.getElementById("inner");
+            var imgWidth = inner.offsetWidth;
+
             var ul = inner.children[0];
             var squareArr = inner.children[1].children;
 
@@ -74,7 +76,7 @@
                     }
                     this.className = "current";
                     //移动盒子
-                    animate(ul, -this.index * 490);
+                    animate(ul, -this.index * imgWidth);
                 }
             }
 
