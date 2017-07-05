@@ -99,57 +99,135 @@
 
 </head>
 <body>
-<div id="box" class="all">
-    <div class="ad">
-        <ul id="imgs">
+<div id="all" class="all">
+    <div class="screen" id="screen">
+        <ul id="ul">
             <li><img src="images/1.jpg"/></li>
             <li><img src="images/2.jpg"/></li>
             <li><img src="images/3.jpg"/></li>
             <li><img src="images/4.jpg"/></li>
             <li><img src="images/5.jpg"/></li>
         </ul>
-    </div>
-    <div id="arr">
-        <span id="left"><</span>
-        <span id="right">></span>
+        <ol>
+
+        </ol>
+        <div id="arr">
+            <span id="left"><</span>
+            <span id="right">></span>
+        </div>
     </div>
 </div>
 <script defer>
-    var box = document.getElementById("all");
-    var imgWidth = box.children[0].offsetWidth;
-    var ul = box.children[0].children[0];
-    var boxLeftRight = box.children[1];
-    var btnarr = boxLeftRight.children;
 
-    box.onmousemove = function () {
-        boxLeftRight.style.display = "block";
-    };
+    var all = document.getElementById("all");
+    var screen = all.firstElementChild || all.firstChild;
+    var imgWidth = screen.offsetWidth;
+    var ul = screen.firstElementChild || all.firstChild;
+    var ol = screen.children[1];
+    var div = screen.lastElementChild || screen.lastChild;
+    var spanArr = div.children;
 
-    box.onmouseout = function () {
-        boxLeftRight.style.display = "none";
-    };
+    var ulNewLi = ul.children[0].cloneNode(true);
+    ul.appendChild(ulNewLi);
 
 
-    var index = 0;
-    btnarr[1].onclick = function () {
-        index++;
-        if (index > ul.children.length - 1) {
-            index = ul.children.length - 1;
-            alert("到头了");
+    for (var i = 0; i < ul.children.length - 1; i++) {
+        var olNewLi = document.createElement("li");
+        olNewLi.innerHTML = i + 1;
+        ol.appendChild(olNewLi);
+    }
+
+    var olLiArr = ol.children;
+    olLiArr[0].className = "current";
+
+    for (var j = 0; j < olLiArr.length; j++) {
+        olLiArr[j].index = j;
+        olLiArr[j].onmouseover = function () {
+
+            for (var k = 0; k < olLiArr.length; k++) {
+                olLiArr[k].className = "";
+            }
+            this.className = "current";
+            key = this.index;
+            square = this.index;
+            //移动盒子
+            animate(ul, -this.index * imgWidth);
         }
-        animate(ul, -index * imgWidth);
-    };
+    }
 
-    btnarr[0].onclick = function () {
-        index--;
-        if (index < 0) {
-            index = 0;
+    //添加定时器
+    var timer = setInterval(nextPage, 1000);
+
+    var key = 0;
+
+    var square = 0;
+
+    function nextPage() {
+        //控制轮播图
+        key++;
+        if (key > olLiArr.length) {
+            ul.style.left = 0;
+            key = 1;
         }
-        animate(ul, -index * imgWidth);
+
+        animate(ul, -key * imgWidth);
+        //控制小方块
+        square++;
+        for (var i = 0; i < olLiArr.length; i++) {
+            olLiArr[i].className = "";
+        }
+        if (square > olLiArr.length - 1) {
+            square = 0;
+        }
+        olLiArr[square].className = "current";
+
+    }
+
+    function prePage() {
+        //控制轮播图
+        key--;
+        if (key < 0) {
+            ul.style.left = olLiArr.length * -imgWidth + "px";
+            key = olLiArr.length - 1;
+        }
+
+        animate(ul, -key * imgWidth);
+        //控制小方块
+        square--;
+        for (var i = 0; i < olLiArr.length; i++) {
+            olLiArr[i].className = "";
+        }
+        if (square < 0) {
+            square = olLiArr.length - 1;
+        }
+        olLiArr[square].className = "current";
+    }
+
+
+    all.onmouseover = function () {
+        clearInterval(timer);
+        //显示图片
+        div.style.display = "block";
     };
 
+
+    all.onmouseout = function () {
+        timer = setInterval(nextPage, 1000);
+        div.style.display = "none";
+    };
+
+    //左右切换图片
+    spanArr[0].onclick = function () {
+        //往左动画
+        prePage();
+    };
+
+    spanArr[1].onclick = function () {
+        nextPage();
+    };
 
     function animate(ele, target) {
+
         //要用定时器，先清除定时器
         //一个盒子只能有一个定时器，这样儿的话，不会和其他盒子出现定时器冲突
         //而定时器本身讲成为盒子的一个属性

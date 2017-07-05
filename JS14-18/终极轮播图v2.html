@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body, ul, ol, li, img {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #all {
+            width: 490px;
+            height: 170px;
+            padding: 5px;
+            position: relative;
+            border: 1px solid #ccc;
+            margin: 100px auto 0;
+            overflow: hidden;
+        }
+
+        .screen {
+            width: 490px;
+            height: 170px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #all img {
+            width: 490px;
+        }
+
+        .screen ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .screen ol li {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+            background: #fff;
+            float: left;
+            margin-right: 10px;
+            cursor: pointer;
+            _display: inline;
+        }
+
+        .screen ol li.current {
+            background: yellow;
+        }
+
+        .screen ul li {
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            top: 0;
+            width: 2940px;
+        }
+
+        .screen ul li.current {
+            display: block;
+        }
+
+        #arr {
+            display: none;
+        }
+
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+
+</head>
+<body>
+<div id="all" class="all">
+    <div class="screen" id="screen">
+        <ul id="ul">
+            <li><img src="images/1.jpg"/></li>
+            <li><img src="images/2.jpg"/></li>
+            <li><img src="images/3.jpg"/></li>
+            <li><img src="images/4.jpg"/></li>
+            <li><img src="images/5.jpg"/></li>
+        </ul>
+        <ol>
+
+        </ol>
+    </div>
+    <div id="arr">
+        <span id="left"><</span>
+        <span id="right">></span>
+    </div>
+</div>
+<script defer>
+
+    var all = document.getElementById("all");
+    var screen = all.firstElementChild || all.firstChild;
+    var imgWidth = screen.offsetWidth;
+    var ul = screen.firstElementChild || all.firstChild;
+    var ol = screen.children[1];
+    var div = screen.lastElementChild || screen.lastChild;
+    var spanArr = div.children;
+
+    var ulNewLi = ul.children[0].cloneNode(true);
+    ul.appendChild(ulNewLi);
+
+
+    for (var i = 0; i < ul.children.length - 1; i++) {
+        var olNewLi = document.createElement("li");
+        olNewLi.innerHTML = i + 1;
+        ol.appendChild(olNewLi);
+    }
+
+    ol.children[0].className = "current";
+    //    var box = document.getElementById("all");
+    //    var imgWidth = box.children[0].offsetWidth;
+    //    var ul = box.children[0].children[0];
+    //    var boxLeftRight = box.children[1];
+    //    var btnarr = boxLeftRight.children;
+    //
+    //    box.onmousemove = function () {
+    //        boxLeftRight.style.display = "block";
+    //    };
+    //
+    //    box.onmouseout = function () {
+    //        boxLeftRight.style.display = "none";
+    //    };
+    //
+    //
+    //    var index = 0;
+    //    btnarr[1].onclick = function () {
+    //        index++;
+    //        if (index > ul.children.length - 1) {
+    //            index = ul.children.length - 1;
+    //            alert("到头了");
+    //        }
+    //        animate(ul, -index * imgWidth);
+    //    };
+    //
+    //    btnarr[0].onclick = function () {
+    //        index--;
+    //        if (index < 0) {
+    //            index = 0;
+    //        }
+    //        animate(ul, -index * imgWidth);
+    //    };
+    //
+    //
+    //    function animate(ele, target) {
+    //        //要用定时器，先清除定时器
+    //        //一个盒子只能有一个定时器，这样儿的话，不会和其他盒子出现定时器冲突
+    //        //而定时器本身讲成为盒子的一个属性
+    //        clearInterval(ele.timer);
+    //        //我们要求盒子既能向前又能向后，那么我们的步长就得有正有负
+    //        //目标值如果大于当前值取正，目标值如果小于当前值取负
+    //        var speed = target > ele.offsetLeft ? 10 : -10;
+    //        ele.timer = setInterval(function () {
+    //            //在执行之前就获取当前值和目标值之差
+    //            var val = target - ele.offsetLeft;
+    //            ele.style.left = ele.offsetLeft + speed + "px";
+    //            //目标值和当前值只差如果小于步长，那么就不能在前进了
+    //            //因为步长有正有负，所有转换成绝对值来比较
+    //            if (Math.abs(val) < Math.abs(speed)) {
+    //                ele.style.left = target + "px";
+    //                clearInterval(ele.timer);
+    //            }
+    //        }, 5)
+    //    }
+</script>
+</body>
+</html>
